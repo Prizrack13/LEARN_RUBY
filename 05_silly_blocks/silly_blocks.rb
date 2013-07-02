@@ -1,7 +1,5 @@
 def reverser
-	mas=yield.split(" ")
-	mas.collect!{|x| x.reverse }
-	mas.join(" ")
+	yield.split.collect{|x| x.reverse }.join(" ")
 end
 
 def adder(a=1)
@@ -9,8 +7,5 @@ def adder(a=1)
 end
 
 def repeater(a=1)
-	while a>0
-		yield if block_given?
-		a-=1
-	end
+	a.times { yield if block_given? }
 end

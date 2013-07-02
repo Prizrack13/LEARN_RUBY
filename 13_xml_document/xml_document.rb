@@ -4,32 +4,8 @@ class XmlDocument
 		@xm=xm
 		@c=0
 	end	
-	
-	def hello(hsh = {})
-		send("hello",hsh) do
-			yield if block_given?
-		end
-	end	
-	
-	def goodbye(hsh = {})
-		send("goodbye",hsh) do
-			yield if block_given?
-		end
-	end	
-	
-	def come_back(hsh = {})
-		send("come_back",hsh) do
-			yield if block_given?
-		end
-	end	
-	
-	def ok_fine(hsh = {})
-		send("ok_fine",hsh) do
-			yield if block_given?
-		end
-	end	
-		
-	def send(tag_name,hsh = {})
+
+	def method_missing(tag_name,hsh = {})
 		ret=""
 		ret+=" "*@c if @xm
 		ret+="<#{tag_name}"

@@ -19,7 +19,8 @@ class Dictionary
 	
 	def find(key)
 		@entries.select {|k,v| k.start_with?(key)}
-	end	
+  end
+
 	def printable
 		ret=[]
 		@entries.sort.each {|key, value| ret<<"[#{key}] \"#{value}\"" }

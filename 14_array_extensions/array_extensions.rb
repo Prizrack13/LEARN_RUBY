@@ -1,21 +1,13 @@
 class Array
 	def sum
-		ret=0
-	    each_index do |i|
-		  ret+=self[i]
-		end
-		ret
-	end	
+    self.inject(0, :+)
+  end
+
 	def square
-		ret=[]
-	    each_index do |i|
-		  ret.push(self[i]**2)
-		end
-		ret
-	end		
+    self.collect{ |i| i** 2 }
+  end
+
 	def square!
-	    each_index do |i|
-		  self[i]=self[i]**2
-		end
+    self.collect!{ |i| i** 2 }
 	end		
 end

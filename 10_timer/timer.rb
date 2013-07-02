@@ -6,7 +6,7 @@ class Timer
 	end	
 	
 	def time_string
-		padded(seconds/3600)+":"+padded(seconds/60%60)+":"+padded(seconds%60)
+		"#{padded(seconds/3600)}:#{padded(seconds/60%60)}:#{padded(seconds%60)}"
 	end	
 	
 	def padded(s)

@@ -1,14 +1,14 @@
 class Temperature
 	def initialize(hsh = {})
 	  if hsh[:c]
-		@c=hsh[:c]
+	  	@c=hsh[:c]
 	  else 
-		if hsh[:f]
-			@f=hsh[:f]
-		else 
-			@f=0
-			@c=0
-		end
+      if hsh[:f]
+        @f=hsh[:f]
+      else
+        @f=0
+        @c=0
+      end
 	  end
 	end
 	
