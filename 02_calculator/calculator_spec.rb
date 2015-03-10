@@ -114,21 +114,3 @@ describe "#factorial" do
 	factorial(10).should == 3628800
   end
 end
-
-describe "#factorial recursive" do
-  it "computes the factorial of 0" do
-	factorialrec(0).should == 1
-  end
-  it "computes the factorial of 1" do
-	factorialrec(1).should == 1
-  end
-  it "computes the factorial of 2" do
-	factorialrec(2).should == 2
-  end
-  it "computes the factorial of 5" do
-	factorialrec(5).should == 120
-  end
-  it "computes the factorial of 10" do
-	factorialrec(10).should == 3628800
-  end
-end
