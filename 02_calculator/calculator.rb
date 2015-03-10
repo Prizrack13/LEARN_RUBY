@@ -1,23 +1,23 @@
-def add(a,b)
-	a+b
+def add(a, b)
+  a + b
 end
 
-def subtract(a,b)
-	a-b
+def subtract(a, b)
+  a - b
 end
 
-def sum(ar)
-  ar.inject(0, :+)
+def sum(arr)
+  arr.inject(0, :+)
 end
 
-def multiply(*ar)
-  ar.inject(1, :*)
+def multiply(*arr)
+  arr.inject(1, :*)
 end
 
-def power(a,b)
-	a**b
+def power(a, b)
+  a ** b
 end
 
 def factorial(a)
-  a <= 1 ? 1 : factorial(a-1) * a
+  a <= 1 ? 1 : factorial(a - 1) * a
 end

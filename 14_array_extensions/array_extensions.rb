@@ -1,13 +1,13 @@
 class Array
-	def sum
+  def sum
     self.inject(0, :+)
   end
 
-	def square
+  def square
     self.collect{ |i| i** 2 }
   end
 
-	def square!
+  def square!
     self.collect!{ |i| i** 2 }
-	end		
+  end    
 end
