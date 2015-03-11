@@ -6,7 +6,7 @@ class Dictionary
   end  
   
   def add(hsh)
-    hsh.class == Hash ? @entries.merge!(hsh) : @entries.merge!(hsh=>nil)
+    hsh.class == Hash ? @entries.merge!(hsh) : @entries.merge!(hsh => nil)
   end  
   
   def keywords
@@ -22,8 +22,6 @@ class Dictionary
   end
 
   def printable
-    ret = []
-    @entries.sort.each {|key, value| ret << "[#{key}] \"#{value}\"" }
-    ret.join("\n")
+    @entries.sort.map {|key, value| "[#{key}] \"#{value}\"" }.join("\n")
   end
 end

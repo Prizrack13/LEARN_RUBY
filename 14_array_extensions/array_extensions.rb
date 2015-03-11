@@ -4,10 +4,10 @@ class Array
   end
 
   def square
-    self.collect{ |i| i** 2 }
+    self.collect{ |i| i ** 2 }
   end
 
   def square!
-    self.collect!{ |i| i** 2 }
+    self.collect!{ |i| i ** 2 }
   end    
 end

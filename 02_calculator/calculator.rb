@@ -19,5 +19,5 @@ def power(a, b)
 end
 
 def factorial(a)
-  a <= 1 ? 1 : factorial(a - 1) * a
+  (1..a).reduce(:*) || 1
 end

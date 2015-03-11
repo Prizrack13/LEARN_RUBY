@@ -6,14 +6,13 @@ class Bignum
   NUMB = %w{billion trillion quadrillion quintillion sextillion septillion octillion nonillion decillion undecillion duodecillion tredecillion quattuordecillion quindecillion sexdecillion septendecillion octodecillion novemdecillion vigintillion}
   
   def number(x)
-    arr = []
+    arr, r = [], 0
     y = x % 1000000000
-    arr.push(y.in_words) if y != 0
     x /= 1000000000
-    r = 0
+    arr.push(y.in_words) if y != 0
     while x > 0
       y = x % 1000
-      arr.push("#{y.in_words} #{NUMB[r]}") if y!=0
+      arr.push("#{y.in_words} #{NUMB[r]}") if y != 0
       x /= 1000
       r += 1
     end
@@ -29,7 +28,7 @@ class Fixnum
   private 
   NUMB = %w{zero one two three four five six seven eight nine}
   NUMB2 = %w{ten eleven twelve thir four fif six seven eigh nine for twen}
-  NUMB3 = %w{thousand million billion}
+  NUMB3 = %w{thousand million billion trillion}
   
   def number(x)
     ret = ''
@@ -45,15 +44,15 @@ class Fixnum
           ret += thirty_to_ninety(x)
           x = 0
          when 20..99
-          ret += tens(x/10)
+          ret += tens(x / 10)
           x = x % 10
          when 100..999
-          ret += hund(x/100," hundred")
+          ret += hund(x / 100, ' hundred')
           x = x % 100
         else
-          3.times do |t|
+          4.times do |t|
             if ((1000 ** (t + 1))..(1000 ** (t + 2) - 1)).include?(x)
-              ret += hund(x / (1000 ** (t + 1))," #{NUMB3[t]}")
+              ret += hund(x / (1000 ** (t + 1)), " #{NUMB3[t]}")
               x = x % (1000 ** (t + 1))
             end
           end

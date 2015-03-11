@@ -1,14 +1,6 @@
 class Temperature
   def initialize(hsh = {})
-    if hsh[:c]
-      @c = hsh[:c]
-    else 
-      if hsh[:f]
-        @f = hsh[:f]
-      else
-        @f, @c = 0, 0
-      end
-    end
+    @f, @c = hsh[:f], hsh[:c]
   end
   
   def in_fahrenheit
@@ -18,7 +10,9 @@ class Temperature
   def in_celsius
     @c ? @c : ftoc(@f)
   end
-  
+
+  private
+
   def ftoc(f)
     (f - 32) * 5.0 / 9.0
   end
@@ -26,13 +20,14 @@ class Temperature
   def ctof(c)
     32 + c * 9.0 / 5.0
   end
+  class << self
+    def from_celsius(c)
+      Celsius.new(c)
+    end
   
-  def self.from_celsius(c)
-    Celsius.new(c)
-  end
-  
-  def self.from_fahrenheit(f)
-    Fahrenheit.new(f)
+    def from_fahrenheit(f)
+      Fahrenheit.new(f)
+    end
   end
 end
 

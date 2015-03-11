@@ -1,5 +1,3 @@
-LITTLE_WORDS = %w{a an and as at but by en for if in of on or the to v v. via vs vs. over}
-
 def echo(str)
   str
 end
@@ -9,7 +7,7 @@ def shout(str)
 end
 
 def repeat(str, times = 2)
-  "#{str} "*(times-1) + str
+  "#{str} " * (times - 1) + str
 end
 
 def start_of_word(str, length)
@@ -17,12 +15,10 @@ def start_of_word(str, length)
 end
 
 def first_word(str)
-  str.split[0]
+  str.split.first
 end
 
 def titleize(str)
-  mas = str.downcase.split
-  mas.collect!{|x| LITTLE_WORDS.include?(x) ? x : x.capitalize}
-  mas[0] = mas.first.capitalize unless mas.empty?
-  mas.join(' ')
+  little_words = %w{a an and as at but by en for if in of on or the to v v. via vs vs. over}
+  str.downcase.split.map.with_index{|x, i| little_words.include?(x) && i > 0 ? x : x.capitalize}.join(' ')
 end

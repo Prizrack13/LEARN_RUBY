@@ -1,7 +1,7 @@
 class XmlDocument
   BR = 2
 
-  def initialize(xm=false)
+  def initialize(xm = false)
     @xm, @c = xm, 0
   end
 
